@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  <title>Generador de Código Poster Wall</title>
+  <style>
+    body {
+      background-color: #121212;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .top-bar {
+      background-color: #121212;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: left; /* Alinea el texto a la izquierda */
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .top-bar .back-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+      width: 100%;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 50px;
+    }
+
+    .container h1 {
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-container label {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    .form-container button {
+      background-color: #1976D2;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .form-container button:hover {
+      background-color: #1565C0;
+    }
+
+    .output-container {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .output-container h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .output-container textarea {
+      width: 100%;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+      background-color: transparent;
+      color: #fff;
+      resize: none;
+    }
+
+    .thumbnail-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .thumbnail-container img {
+      max-width: 100px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .buttons-container button {
+      background-color: #1976D2;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .buttons-container button:hover {
+      background-color: #1565C0;
+    }
+/* Pie de página */
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+            color:white;
+        }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="/index.html" onclick="history.back()" class="back-link">
+  <i class="fas fa-arrow-left"></i> Regresar
+</a>
+
+  </div>
+  <div class="container">
+    <h1>Generador de Código Poster Wall</h1>
+    <div class="form-container">
+      <label for="enlace">Enlace Wallpaper:</label>
+      <input type="text" id="enlace" name="enlace" required><br>
+
+      <label for="irA">Referencia:</label>
+      <input type="text" id="irA" name="irA" required><br>
+
+      <button type="button" onclick="generateCode()">Generar Código</button>
+    </div>
+
+    <div class="output-container">
+      <h2>Código Generado:</h2>
+      <textarea id="generatedCode" readonly>
+          <!-- El código generado se mostrará aquí -->
+      </textarea>
+    </div>
+
+    <!-- Miniatura del Enlace Wallpaper -->
+    <div class="thumbnail-container">
+      <h2>Miniatura del Poster Wall:</h2>
+      <img id="thumbnail" src="" alt="Miniatura del Enlace Wallpaper">
+    </div>
+
+    <!-- Botón de copiar código -->
+    <div class="buttons-container">
+      <button type="button" class="copy-button" onclick="copyCode()">Copiar Código</button>
+    </div>
+<footer>Desarrollado Por The Sthip Oficial</footer>
+  </div>
+
+  <script>
+    function generateCode() {
+      const enlace = document.getElementById("enlace").value;
+      const irA = document.getElementById("irA").value;
+
+      const code = `addPoster("${enlace}", "go:${irA}");`;
+
+      document.getElementById("generatedCode").textContent = code;
+      document.getElementById("thumbnail").src = enlace;
+    }
+
+    function copyCode() {
+      const codeText = document.getElementById("generatedCode");
+      const code = codeText.textContent;
+
+      const tempInput = document.createElement("input");
+      tempInput.value = code;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      alert("Código copiado al portapapeles:\n" + code);
+    }
+  </script>
+</body>
+</html>

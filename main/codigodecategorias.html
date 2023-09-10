@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Código HTML</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+.top-bar {
+      background-color: #121212;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: left; /* Alinea el texto a la izquierda */
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .top-bar .back-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+        /* Cuadro de texto */
+        textarea {
+            background-color: #212121;
+            color: #fff;
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+            padding: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            width: 100%;
+            max-width: 800px;
+            min-height: 300px;
+            resize: vertical;
+            overflow-y: scroll;
+        }
+
+        /* Botón de copiar */
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Pie de página */
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="top-bar">
+    <a href="/index.html" onclick="history.back()" class="back-link">
+  <i class="fas fa-arrow-left"></i> Regresar
+</a>
+
+</div>
+
+</div>
+    <div class="container">
+        <h1>CODIGO SECCION DE CATEGORIAS </h1>
+        <textarea id="htmlCode" readonly>
+            <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flutter-icons/mdi.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    /* Estilos del header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: #212121;
+      z-index: 999; /* Asegúrate de que el header esté por encima del contenido */
+    }
+
+    .header img {
+      width: 200px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .header .icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .icon {
+      color: #ffffff;
+      font-size: 24px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    /* Estilos de la cuadrícula de categorías */
+    .container-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 80px; /* Añadir margen superior para evitar que el contenido quede detrás del encabezado */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* Centrar vertical y horizontalmente */
+      width: calc(50% - 20px); /* 2 categorías por nivel */
+      margin: 10px;
+      border: 1px solid #333333;
+      border-radius: 5px;
+      background-color: #212121;
+      cursor: pointer;
+      padding: 20px;
+    }
+
+    .container a {
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center; /* Alinear el texto al centro */
+    }
+
+    .container i {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .container h2 {
+      font-size: 18px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    /* Estilos de la barra de navegación */
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #212121;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .navbar .icon {
+      font-size: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 100%; /* Una categoría por nivel en dispositivos móviles */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="https://www.example.com/search" target="_blank" rel="noopener noreferrer">
+      <img src="https://i.ibb.co/wBstXMf/image-removebg-preview-1.png" alt="Wallpapers App Logo">
+    </a>
+    <div class="icons">
+      <a href="http://action_search" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-search icon"></i>
+      </a>
+      <a href="http://action_notifications" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-bell icon"></i>
+      </a>
+      <a href="http://action_profile" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-user icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="container-wrapper">
+    <div class="container">
+      <a href="go:animales" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-mountain"></i>
+        <h2>Animales</h2>
+      </a>
+    </div>
+
+    <div class="container">
+      <a href="go:anime" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-city"></i>
+        <h2>Anime</h2>
+      </a>
+    </div>
+
+    <div class="container">
+      <a href="go:comics" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-beach"></i>
+        <h2>Comics</h2>
+      </a>
+    </div>
+
+    <div class="container">
+      <a href="go:arte" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-tree"></i>
+        <h2>Arte y Diseño</h2>
+      </a>
+    </div>
+    
+     <div class="container">
+      <a href="go:caricatura" target="_blank" rel="noopener noreferrer">
+        <i class="far fa-laugh-squint"></i>
+        <h2>Caricaturas</h2>
+      </a>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <a href="go:home" target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-home icon"></i>
+    </a>
+    <a href="go:category" target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-list icon"></i>
+    </a>
+    <a href="https://www.example.com/donate" target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-shield-alt icon"></i>
+    </a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flutter-icons@1.1.0/lib/flutter-icons.js"></script>
+</body>
+</html>
+
+        </textarea>
+        <button id="copyButton" onclick="copyToClipboard()">Copiar al Portapapeles</button>
+
+        <footer>Desarrollado Por The Sthip Oficial</footer>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const htmlCode = document.getElementById('htmlCode');
+            htmlCode.select();
+
+            try {
+                document.execCommand('copy');
+                alert('Código HTML copiado al portapapeles.');
+            } catch (err) {
+                alert('No se pudo copiar al portapapeles. Por favor, cópialo manualmente.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Código HTML</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+.top-bar {
+      background-color: #121212;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: left; /* Alinea el texto a la izquierda */
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .top-bar .back-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+        /* Cuadro de texto */
+        textarea {
+            background-color: #212121;
+            color: #fff;
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+            padding: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            width: 100%;
+            max-width: 800px;
+            min-height: 300px;
+            resize: vertical;
+            overflow-y: scroll;
+        }
+
+        /* Botón de copiar */
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Pie de página */
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="top-bar">
+    <a href="/index.html" onclick="history.back()" class="back-link">
+  <i class="fas fa-arrow-left"></i> Regresar
+</a>
+
+</div>
+
+</div>
+    <div class="container">
+        <h1>CODIGO HOME PAGE </h1>
+        <textarea id="htmlCode" readonly>
+            <!DOCTYPE html>
+<html>
+<head>
+  <title>Wallpapers App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    /* Estilos del header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #212121;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      z-index: 1000;
+    }
+
+    .header img {
+      width: 200px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .header .icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .icon {
+      color: #ffffff;
+      font-size: 24px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    /* Estilos del contenido */
+    .content {
+      padding-top: 80px;
+    }
+
+    /* Estilos de los posters */
+    .poster-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .poster {
+      width: calc(25% - 20px);
+      margin: 10px;
+      background-color: #212121;
+      border-radius: 10px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .poster:hover {
+      transform: scale(1.05);
+    }
+
+    .poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .watermark {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      max-width: 100%;
+      background-color: transparent;
+      color: navy;
+      padding: 3px;
+      font-size: 10px;
+      font-weight: bold;
+      border: 1px solid #02C2FF;
+    }
+
+    @media (max-width: 768px) {
+      .watermark {
+        font-size: 8px;
+        padding: 2px;
+        color: #BDE5F2;
+      }
+
+      /* Estilos móviles para el slider de miniaturas */
+      .miniature-container {
+        margin-top: 20px;
+        overflow: hidden;
+      }
+
+      .miniature-slider {
+        display: flex;
+        align-items: center;
+        background-color: #121212;
+        padding: 10px 0;
+        overflow-x: scroll;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 20px;
+      }
+
+      .miniature-slider div {
+        margin: 0 5px;
+      }
+
+      .miniature-slider img {
+        width: 290px;
+        height: 160px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+        border-radius: 10px;
+      }
+
+      .miniature-slider img:hover {
+        border-color: #02C2FF;
+      }
+
+      /* Estilos del slider de categorías */
+      .category-slider-container {
+        margin-top: 20px;
+        padding: 0 20px;
+      }
+
+      .category-slider {
+        display: flex;
+        align-items: center;
+        background-color: #121212;
+        padding: 10px 0;
+        overflow-x: scroll;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .category-slider div {
+        margin: 0 10px;
+      }
+
+      .category-button {
+        background-color: #02C2FF;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+
+      .category-button:hover {
+        background-color: #0187D6;
+      }
+
+      /* Oculta los botones "previous" y "next" en dispositivos móviles */
+      .slick-prev,
+      .slick-next {
+        display: none !important;
+      }
+    }
+
+    /* Estilos de la barra de navegación */
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #212121;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .navbar .icon {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="https://www.example.com/search" target="_blank" rel="noopener noreferrer">
+      <img src="https://i.ibb.co/wBstXMf/image-removebg-preview-1.png" alt="Wallpapers App Logo">
+    </a>
+    <div class="icons">
+      <a href="go:buscar" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-search icon"></i>
+      </a>
+      <a href="http://action_notifications" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-bell icon"></i>
+      </a>
+      <a href="http://action_profile" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-user icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="content">
+<!-- Slider de miniaturas -->
+<div class="miniature-slider">
+  <div>
+    <img src="https://www.appcreator24.com/srv/imgs/cards/o2813545_14287016.png" alt="Miniatura 1" onclick="window.location.href='https://www.ejemplo.com/pagina1';">
+  </div>
+  
+  <div>
+    <img src="https://www.appcreator24.com/srv/imgs/cards/o2813545_14287015.png" alt="Miniatura 2" onclick="window.location.href='https://www.ejemplo.com/pagina1';">
+  </div>
+  <div>
+    <img src="https://www.appcreator24.com/srv/imgs/cards/o2813545_14287014.png" alt="Miniatura 3" onclick="window.location.href='https://www.ejemplo.com/pagina1';">
+  </div>
+  <div>
+    <img src="https://www.appcreator24.com/srv/imgs/cards/temp/8086716.png" alt="Miniatura 4"onclick="window.location.href='https://www.ejemplo.com/pagina1';">
+  </div>
+  <!-- Agrega más miniaturas correspondientes a las imágenes del slider principal -->
+  <div>
+    <img src="https://www.appcreator24.com/srv/imgs/cards/temp/8086717.png" alt="Miniatura 5" onclick="window.location.href='https://www.ejemplo.com/pagina1';">
+  </div>
+  <div>
+    <img src="https://www.appcreator24.com/srv/imgs/cards/o2813545_14287012.png" alt="Miniatura 6" onclick="window.location.href='https://www.ejemplo.com/pagina1';">
+  </div>
+  <div>
+    <img src="https://www.appcreator24.com/srv/imgs/cards/o2813545_14287013.png" alt="Miniatura 7" onclick="window.location.href='https://www.ejemplo.com/pagina1';">
+  </div>
+  <!-- Agrega tantas miniaturas como desees -->
+</div>
+
+    </div>
+
+    <!-- Slider de categorías -->
+    <div class="category-slider-container">
+      <div class="category-slider">
+        <div class="category-button" onclick="window.location.href='go:animales';">Animales</div>
+        <div class="category-button" onclick="window.location.href='go:anime';">Anime</div>
+        <div class="category-button" onclick="window.location.href='go:comics';">Comics</div>
+        <div class="category-button" onclick="window.location.href='go:caricatura';">Caricaturas</div>
+        <div class="category-button" onclick="window.location.href='go:arte';">Arte y Diseño</div>
+        <!-- Agrega más botones de categoría según sea necesario -->
+      </div>
+    </div>
+
+    <div class="poster-container" id="poster-list">
+      <!-- Lista de posters -->
+      <!-- Ejemplo de añadir posters con enlaces diferentes -->
+      <!-- Añade más posters según sea necesario -->
+      <!-- Aquí puedes utilizar tu JavaScript para agregar posters dinámicamente -->
+    </div>
+  </div>
+
+  <div class="navbar">
+    <a href="go:home" target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-home icon"></i>
+    </a>
+    <a href="go:category" target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-list icon"></i>
+    </a>
+    <a href="go:dmca" target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-shield-alt icon"></i>
+    </a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    // Función para añadir un nuevo poster al contenedor
+    function addPoster(imageUrl, linkUrl) {
+      var posterContainer = document.getElementById("poster-list");
+      var poster = document.createElement("a");
+      poster.href = linkUrl;
+      poster.target = "_blank";
+      poster.rel = "noopener noreferrer";
+      poster.className = "poster";
+      
+      var posterImage = document.createElement("img");
+      posterImage.src = imageUrl;
+      posterImage.alt = "Wallpaper";
+      
+      var watermark = document.createElement("div");
+      watermark.className = "watermark";
+      watermark.innerHTML = "BLUE WALLS";
+      
+      poster.appendChild(posterImage);
+      poster.appendChild(watermark);
+      posterContainer.appendChild(poster);
+    }
+
+       // Inicializa el slider de miniaturas con autoplay cada 1.5 segundos
+  $('.miniature-slider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: true,
+    focusOnSelect: true,
+    variableWidth: true,
+    autoplay: true,         // Activa el autoplay
+    autoplaySpeed: 1500     // Velocidad de cambio de diapositivas en milisegundos (1.5 segundos)
+  });
+
+    // Ejemplo de añadir posters con enlaces diferentes
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_3629.jpg", "go:kakashi01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_3605.jpg", "go:kakashi02");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_3956.jpg", "go:onepice01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_4549.jpg", "go:black01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_10499.jpg", "go:bart01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_9244.jpg", "go:myhero01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_7675.jpg", "go:jujusut01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_6845.jpg", "go:clover01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_11372.jpg", "go:pikachu01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_8426.jpg", "go:pikachu02");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_11679.jpg", "go:johnwick01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_11547.jpg", "go:Donkey01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_11531.jpg", "go:luigi01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_11639.jpg", "go:rgb01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_11554.jpg", "go:stray01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_11036.jpg", "go:stray02");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_11712.jpg", "go:shinobu01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_10790.jpg", "go:univer01");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_6222.jpg", "go:univer02");
+    addPoster("https://www.xtrafondos.com/thumbs/vertical/1_11521.jpg", "go:mesi01");
+    
+    // Añade más posters según sea necesario
+  </script>
+</body>
+</html>
+
+        </textarea>
+        <button id="copyButton" onclick="copyToClipboard()">Copiar al Portapapeles</button>
+
+        <footer>Desarrollado Por The Sthip Oficial</footer>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const htmlCode = document.getElementById('htmlCode');
+            htmlCode.select();
+
+            try {
+                document.execCommand('copy');
+                alert('Código HTML copiado al portapapeles.');
+            } catch (err) {
+                alert('No se pudo copiar al portapapeles. Por favor, cópialo manualmente.');
+            }
+        }
+    </script>
+</body>
+</html>

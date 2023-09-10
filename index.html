@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tu_estilo.css"> <!-- Reemplaza 'tu_estilo.css' con tu archivo de estilos personalizado -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"> <!-- Agrega Font Awesome -->
+    <title>Página de Inicio</title>
+    <style>
+        /* Estilo de Flutter app dark */
+        body {
+            background-color: #121212; /* Color de fondo oscuro */
+            color: #fff; /* Color de texto claro */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            display: inline-block;
+            width: 200px; /* Tamaño del contenedor cuadrado */
+            height: 200px; /* Tamaño del contenedor cuadrado */
+            background-color: #212121; /* Color de fondo oscuro para los contenedores */
+            border-radius: 10px; /* Bordes redondeados */
+            margin: 20px; /* Espacio entre contenedores */
+            transition: background-color 0.3s ease; /* Transición de color al pasar el mouse */
+            color: #fff; /* Color de texto claro para los contenedores */
+        }
+
+        .container i {
+            font-size: 48px;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .container h2 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .container a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .container:hover {
+            background-color: #007BFF; /* Color de fondo de resaltado al pasar el mouse */
+            color: #fff; /* Color de texto claro para resaltado al pasar el mouse */
+        }
+
+        /* Estilo adicional para el último contenedor */
+        .container:last-child {
+            margin-right: 0; /* Elimina el margen derecho del último contenedor */
+        }
+
+/* Pie de página */
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>BLUEWALLS SHORTCODES</h1>
+    </header>
+    <div class="container">
+        <i class="fas fa-home"></i>
+        <h2>Página de Inicio</h2>
+        <a href="main/codigohomepage.html" target="_self">Ir a la Página de Inicio</a>
+    </div>
+    <div class="container">
+        <i class="fas fa-th"></i>
+        <h2>Página de Categorías</h2>
+        <a href="main/codigodecategorias.html" target="_self">Explorar Categorías</a>
+    </div>
+    <div class="container">
+        <i class="fas fa-search"></i>
+        <h2>Codigo Buscador</h2>
+        <a href="main/zona_de_busqueda.html" target="_self">Buscar Resultados</a>
+    </div>
+    <div class="container">
+        <i class="fas fa-image"></i>
+        <h2>Generator Poster</h2>
+        <a href="main/posterhome.html" target="_self">Crear Póster</a>
+    </div>
+    <div class="container">
+        <i class="fas fa-download"></i>
+        <h2>Generator Wall Descarga</h2>
+        <a href="main/zona de descarga.html" target="_self">Descargar Wallpapers</a>
+    </div>
+    <div class="container">
+        <i class="fas fa-search"></i>
+        <h2>Generador Búsqueda</h2>
+        <a href="main/resultbuscar.html" target="_self">Generador busqueda</a>
+    </div>
+<footer>Desarrollado Por The Sthip Oficial</footer>
+    <!-- Script para cargar y copiar contenido de 'home.txt' -->
+    <script>
+        document.querySelector('.container:last-child').addEventListener('click', function () {
+            fetch('src/home.txt')
+                .then(response => response.text())
+                .then(text => {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    alert('Contenido de "home.txt" copiado al portapapeles.');
+                })
+                .catch(error => {
+                    console.error('Error al cargar el archivo:', error);
+                });
+        });
+    </script>
+</body>
+
+</html>

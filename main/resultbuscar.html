@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Código HTML</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Color de fondo oscuro */
+            color: #ffffff; /* Color de texto blanco */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #282828; /* Color de fondo más oscuro */
+        }
+
+.top-bar {
+      background-color: #121212;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: left; /* Alinea el texto a la izquierda */
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .top-bar .back-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+        h1 {
+            color: #1976D2; /* Color del encabezado principal */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffffff; /* Color de texto blanco para las etiquetas */
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #424242; /* Color de fondo de los campos de entrada */
+            color: #ffffff; /* Color de texto blanco en los campos de entrada */
+        }
+        button {
+            background-color: #1976D2; /* Color de fondo del botón Generar */
+            color: #ffffff; /* Color de texto blanco en el botón Generar */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.copy {
+            background-color: #388E3C; /* Color de fondo del botón Copiar */
+        }
+        button:hover {
+            background-color: #1565C0; /* Cambio de color al pasar el cursor sobre el botón */
+        }
+        h2 {
+            color: #1976D2; /* Color de los encabezados secundarios */
+        }
+        .preview {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .preview img {
+            max-width: 100%;
+            max-height: 200px;
+        }
+        #generatedCode {
+            background-color: #333333; /* Color de fondo del código HTML generado */
+            color: #ffffff; /* Color de texto blanco en el código HTML generado */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Para mostrar saltos de línea */
+        }
+/* Pie de página */
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="top-bar">
+    <a href="/index.html" onclick="history.back()" class="back-link">
+  <i class="fas fa-arrow-left"></i> Regresar
+</a>
+
+</div>
+
+</div>
+    <div class="container">
+        <h1>Generador de Código Resultado de busqueda HTML</h1>
+        <form id="generatorForm">
+            <label for="wallpaperLink">Enlace del Wallpaper:</label>
+            <input type="text" id="wallpaperLink" required>
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            
+            <label for="linkAIr">Enlace a donde dirigir:</label>
+            <input type="text" id="linkAIr" required>
+            
+            <button type="button" id="generateButton">Generar Código HTML</button>
+            <button type="button" id="copyButton" class="copy">Copiar Código</button>
+        </form>
+        
+        <!-- Vista previa del wallpaper -->
+        <div class="preview">
+            <h2>Vista Previa del Wallpaper</h2>
+            <img id="wallpaperPreview" src="" alt="Miniatura del Enlace Wallpaper">
+        </div>
+
+        <h2>Código HTML Generado:</h2>
+        <pre id="generatedCode"></pre>
+    </div>
+<footer>Desarrollado Por The Sthip Oficial</footer>
+    </div>
+
+    <script>
+        const wallpaperLinkInput = document.getElementById('wallpaperLink');
+        const nombreInput = document.getElementById('nombre');
+        const linkAIrInput = document.getElementById('linkAIr');
+        const generateButton = document.getElementById('generateButton');
+        const copyButton = document.getElementById('copyButton');
+        const generatedCode = document.getElementById('generatedCode');
+        const wallpaperPreview = document.getElementById('wallpaperPreview');
+
+        wallpaperLinkInput.addEventListener('input', function() {
+            const wallpaperLink = wallpaperLinkInput.value;
+            wallpaperPreview.src = wallpaperLink; // Cambia el src de la imagen en la vista previa
+            wallpaperPreview.alt = 'Miniatura del Enlace Wallpaper'; // Cambia el atributo alt
+            wallpaperPreview.style.display = 'block';
+        });
+
+        generateButton.addEventListener('click', function() {
+            const wallpaperLink = wallpaperLinkInput.value;
+            const nombre = nombreInput.value;
+            const linkAIr = linkAIrInput.value;
+
+            // Agregar "go:" antes del enlace a donde dirigir
+            const linkAIrConGo = `go:${linkAIr}`;
+
+            const codigoHTML = `<li><a href="${linkAIrConGo}" class="card">
+                <img alt="imagen" src="${wallpaperLink}"/>
+                <span>${nombre}</span>
+            </a></li>`;
+
+            generatedCode.textContent = codigoHTML;
+        });
+
+        copyButton.addEventListener('click', function() {
+            const codeToCopy = generatedCode.textContent;
+            const textArea = document.createElement('textarea');
+            textArea.value = codeToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Código copiado al portapapeles');
+        });
+    </script>
+</body>
+</html>
